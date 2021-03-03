@@ -271,3 +271,21 @@ h3 {
     max-width: 30%;
     min-width: 175px;
 }
+
+.video {
+    text-align: center;
+}
+
+iframe {
+    margin-bottom: 2em;
+}
+
+.blog_content {
+    width: 60%;
+    margin: auto;
+}
+
+.blog_divider {
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
