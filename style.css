@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200;0,400;0,700;1,200;1,400;1,700&family=Raleway:ital@0;1&display=swap');
+/* Fonts - 
+    font-family: 'Crimson Pro', serif;
+    font-family: 'Raleway', sans-serif;
+*/
+
+:root {
+    --background: #222;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    color: #222;
+}
+
+/* nav styles start here */
+
+header {
+    background: var(--background);
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    opacity: 90%;
+}
+
+h1 {
+    font-family: 'Crimson Pro', serif;
+    letter-spacing: .3em;
+    font-weight: 200;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 1px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background: var(--background);
+    width: 100%;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: .8rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: white
+}
+
+.nav-toggle:checked ~ nav {
+    transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 990px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / 3;
+        margin-left: 4px;
+    }
+
+    nav {
+        all: unset;
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 7px;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 2em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 1px;
+        background: white;
+        position: absolute;
+        bottom: -.5em;
+        left: 0;
+        right: 0;
+        transform: scale(0,1);
+        transform-origin: left;
+        transition: transform ease-in-out 250ms;
+    }
+    
+    nav a:hover::before {
+        transform: scale(1,1);
+    }
+}
+
+/* Content starts here */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 80%;
+    margin: auto;
+}
+
+.about {
+    display: flex;
+}
+
+h2 {
+    margin-top: 78.8px;
+    font-family: 'Crimson Pro', serif;
+    letter-spacing: .1em;
+    font-weight: 200;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: 222;
+    text-align: center;}
+
+h3 {
+    font-weight: normal
+}
+
+.about_content {
+    line-height: 2em;
+}
+
+.family_pic {
+    max-width: 300px;
+    height: 30%;
+    margin-right: 2em;   
+}
+
+.divider {
+    margin-top: 5em;
+}
+
+.job_title {
+    margin-bottom: -.5rem;
+}
+
+.job_location {
+    font-style: italic;
+    font-size: .9em;
+    margin-left: 2rem;
+    display: inline-block;
+}
+
+.job_timeline {
+    display: inline-block;
+    font-size: .9em;
+    margin-left: .5rem;
+}
+
+.job_description {
+    margin: 0 0 3rem 2rem;
+    
+}
+
+.exp_container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.other_experience {
+    width: 45%;
+    text-align: center;
+}
+
+.education {
+    width: 45%;
+    text-align: center;
+}
+
+.skills_container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.skill_label {
+    text-align: center;
+}
+
+.skill {
+    max-width: 30%;
+    min-width: 175px;
+}
